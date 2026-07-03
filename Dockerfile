@@ -8,5 +8,7 @@ LABEL description="Xiaomi Mi 360 Camera RTSP Restreamer using go2rtc"
 EXPOSE 1984 8554
 
 # Standard command for go2rtc
-# The base image alexxit/go2rtc has ENTRYPOINT ["/go2rtc"]
-CMD ["-config", "/config/go2rtc.yaml"]
+# The base image alexxit/go2rtc has ENTRYPOINT ["/sbin/tini", "--"]
+# and default CMD ["go2rtc", "-config", "/config/go2rtc.yaml"]
+# We will use the same but ensure go2rtc is called correctly.
+CMD ["go2rtc", "-config", "/config/go2rtc.yaml"]
