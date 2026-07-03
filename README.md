@@ -12,7 +12,7 @@ This project provides a Dockerized solution to restream a Xiaomi Mi 360 1080p ca
 ## Getting Started
 
 1.  **Configure Environment:**
-    Create a `.env` file in the root directory and add your camera's IP:
+    Create a `.env` file in the root directory (you can copy `.env.example`) and add your camera's IP:
     ```env
     CAMERA_IP=192.168.1.123
     ```
@@ -37,7 +37,7 @@ This project provides a Dockerized solution to restream a Xiaomi Mi 360 1080p ca
 
 ## Configuration
 
-The configuration is stored in `config/go2rtc.yaml`. You can modify it to add more cameras or change streaming settings.
+The configuration is stored in `config/go2rtc.yaml`.
 
 ### Adding multiple cameras
 
@@ -48,6 +48,11 @@ streams:
   camera1: xiaomi://192.168.1.123?model=chuangmi.camera.046a01
   camera2: xiaomi://192.168.1.124?model=some.other.model
 ```
+
+## Troubleshooting
+
+- **Container fails to start:** Ensure the `config` directory exists and has appropriate permissions.
+- **Authentication fails:** Make sure you use the same region in the login process as where your camera is registered.
 
 ## Credits
 

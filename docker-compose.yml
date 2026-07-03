@@ -1,6 +1,6 @@
 services:
   xiaomi-rtsp:
-    build: .
+    image: alexxit/go2rtc:latest
     container_name: xiaomi-rtsp
     restart: unless-stopped
     ports:
