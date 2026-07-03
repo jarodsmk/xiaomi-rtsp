@@ -1,0 +1,12 @@
+services:
+  xiaomi-rtsp:
+    build: .
+    container_name: xiaomi-rtsp
+    restart: unless-stopped
+    ports:
+      - "1984:1984" # Web UI
+      - "8554:8554" # RTSP
+    environment:
+      - CAMERA_IP=${CAMERA_IP}
+    volumes:
+      - ./config:/config

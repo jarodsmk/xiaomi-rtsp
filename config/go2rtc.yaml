@@ -1,0 +1,14 @@
+log:
+  level: info
+
+rtsp:
+  listen: ":8554"
+
+# The xiaomi section will be populated by the Web UI after login
+# xiaomi:
+#   YOUR_ACCOUNT_ID: V1:***
+
+streams:
+  # The CAMERA_IP environment variable should be set in docker-compose.yml or .env file
+  # You can also add ?did=... if discovery doesn't work automatically
+  camera1: xiaomi://${CAMERA_IP}?model=chuangmi.camera.046a01
